@@ -1,0 +1,2 @@
+/home/yanjichao/android/Workspace/FamilyExpress/obj/local/armeabi/objs-debug/speex/./libspeex/high_lsp_tables.o: \
+ /home/yanjichao/android/Workspace/FamilyExpress/jni/./libspeex/high_lsp_tables.c

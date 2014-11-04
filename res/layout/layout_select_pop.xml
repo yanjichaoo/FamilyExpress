@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_hu"
+    android:paddingBottom="20dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/mode_text"
+        style="@style/select_pop_text"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/chat_icon_text"
+        android:text="文本" />
+
+    <TextView
+        android:id="@+id/mode_audio"
+        style="@style/select_pop_text"
+        android:layout_above="@id/mode_text"
+        android:layout_alignLeft="@id/mode_text"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/chat_icon_audio"
+        android:text="语音" />
+
+    <TextView
+        android:id="@+id/mode_image"
+        style="@style/select_pop_text"
+        android:layout_above="@id/mode_audio"
+        android:layout_alignLeft="@id/mode_audio"
+        android:layout_marginBottom="37dp"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/chat_icon_image"
+        android:text="图片" />
+
+</RelativeLayout>

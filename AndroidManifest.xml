@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xikang.family.activity"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <activity
+            android:name="com.xikang.cpsclient.NotificationServiceSettingsActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.xikang.cpsclient.NotificationService"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.xikang.cpsclient.NotificationService" >
+                </action>
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.xikang.family.common.LocalExpressService"
+            android:enabled="true" />
+        <service android:name="com.xikang.family.common.SendService" />
+
+        <receiver android:name="com.xikang.family.common.CommonNotificationReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="com.xikang.cps.app.f65a2b2a99194778a9cd2ec1799eea55" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.xikang.cpsclient.BootCompleteReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
+         <receiver android:name="com.xikang.cpsclient.ShutdownReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".LoadingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntroduceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CheckSDCardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/notfullscreen" />
+        <activity
+            android:name=".RegistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ModeSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddMainFrameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Foo" />
+        <activity
+            android:name=".AddModeByRegActivityGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeByRegEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeByConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeByUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeByUserActivityGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeByUserAndPwdActivityGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeByUserAndPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddModeSearchListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ImageCheckActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ImageSendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PhotoSendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ImageCheckActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ImageSendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExpressRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyActivityGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyMainFrameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FamilyDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingActivityGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingHoldActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingVersionActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

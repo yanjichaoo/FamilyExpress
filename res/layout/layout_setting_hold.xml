@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<include layout="@layout/layout_title_bar" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:paddingLeft="15dp" android:paddingRight="15dp"
+		android:layout_margin="20dp" android:layout_height="fill_parent"
+		android:orientation="vertical">
+		<FrameLayout style="@style/setting_layout"
+			android:background="@drawable/layout_top_bg">
+			<TextView style="@style/setting_text" android:text="@string/setting_hold_month" />
+			<CheckBox style="@style/setting_checkbox" android:id="@+id/check_month" android:checked="false"/>
+		</FrameLayout>
+		<LinearLayout style="@style/setting_layout_line" />
+		<FrameLayout style="@style/setting_layout"
+			android:background="@drawable/layout_mid_bg">
+			<TextView style="@style/setting_text" android:text="@string/setting_hold_halfyear" />
+			<CheckBox style="@style/setting_checkbox" android:id="@+id/check_halfyear" android:checked="false"/>
+		</FrameLayout>
+		<LinearLayout style="@style/setting_layout_line" />
+		<FrameLayout style="@style/setting_layout"
+			android:background="@drawable/layout_mid_bg">
+			<TextView style="@style/setting_text" android:text="@string/setting_hold_oneyear" />
+			<CheckBox style="@style/setting_checkbox" android:id="@+id/check_oneyear" android:checked="false"/>
+		</FrameLayout>
+		<LinearLayout style="@style/setting_layout_line" />
+		<FrameLayout style="@style/setting_layout"
+			android:background="@drawable/layout_bottom_bg">
+			<TextView style="@style/setting_text" android:text="@string/setting_hold_always" />
+			<CheckBox style="@style/setting_checkbox" android:id="@+id/check_always" android:checked="false"/>
+		</FrameLayout>
+	</LinearLayout>
+</LinearLayout>

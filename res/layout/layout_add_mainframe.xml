@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:background="@drawable/title_bg">
+		<Button android:id="@+id/btnTBLeft" android:layout_height="wrap_content"
+			android:layout_centerVertical="true" android:layout_width="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_marginLeft="20dp"
+			android:paddingLeft="5dp" android:background="@drawable/title_left_selector"
+			android:textColor="#FFFFFF" />
+		<TextView android:id="@+id/tvTBContent" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_centerInParent="true"
+			android:maxWidth="180dip" android:singleLine="true" android:textSize="25dp"
+			android:text="@string/add_title" android:textColor="#CC6633" />
+		<RelativeLayout android:id="@+id/btnTBRight"
+			android:layout_height="wrap_content" android:layout_centerVertical="true"
+			android:layout_width="wrap_content" android:background="@drawable/title_right_selector"
+			android:gravity="center_horizontal" android:layout_alignParentRight="true"
+			android:layout_marginRight="10dip">
+			<TextView android:id="@+id/tv_right" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_centerVertical="true"
+				android:text="@string/modeselect_info_8" style="@style/main_text" />
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_centerVertical="true"
+				android:src="@drawable/arrow" android:layout_toRightOf="@id/tv_right" />
+		</RelativeLayout>
+	</RelativeLayout>
+	<TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:background="#FFFFFF">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:orientation="vertical">
+			<TabWidget android:id="@android:id/tabs"
+				android:visibility="gone" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
+			<LinearLayout android:gravity="center_vertical"
+				android:layout_marginBottom="5dp" android:paddingTop="15dp"
+				android:layout_weight="0" android:orientation="horizontal"
+				android:layout_width="fill_parent" android:layout_height="wrap_content">
+				<LinearLayout android:layout_width="0dp"
+					android:layout_height="wrap_content" android:layout_weight="1"
+					android:gravity="center">
+					<Button android:layout_width="wrap_content" android:id="@+id/btn_mode_reg"
+						android:background="@drawable/mode_icon_reg_check"
+						android:layout_height="wrap_content" android:checked="true" />
+				</LinearLayout>
+				<LinearLayout android:layout_width="0dp"
+					android:layout_height="wrap_content" android:layout_weight="1"
+					android:gravity="center">
+					<Button android:layout_width="wrap_content" android:id="@+id/btn_mode_user"
+						android:background="@drawable/mode_icon_user"
+						android:layout_height="wrap_content" />
+				</LinearLayout>
+				<LinearLayout android:layout_width="0dp"
+					android:layout_height="wrap_content" android:layout_weight="1"
+					android:gravity="center">
+					<Button android:layout_width="wrap_content" android:id="@+id/btn_mode_userandpwd"
+						android:background="@drawable/mode_icon_userandpwd"
+						android:layout_height="wrap_content" />
+				</LinearLayout>
+			</LinearLayout>
+			<FrameLayout android:id="@android:id/tabcontent"
+				android:layout_weight="1" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+	</TabHost>
+
+</LinearLayout>

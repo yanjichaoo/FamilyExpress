@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:background="@drawable/bg"
+	android:paddingTop="60dp" android:paddingLeft="30dp"
+	android:paddingRight="30dp" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:layout_width="wrap_content" style="@style/title_text"
+		android:textColor="#000000" android:layout_height="wrap_content"
+		android:text="@string/guide_info_1" />
+	<TextView android:layout_width="wrap_content"
+		android:layout_marginTop="10dp" android:layout_height="wrap_content"
+		android:text="@string/guide_info_2" />
+	<TextView android:layout_width="wrap_content" style="@style/guide_main"
+		android:paddingLeft="5dp" android:paddingTop="15dp"
+		android:background="@drawable/guide_start_selector" android:id="@+id/btn_start"
+		android:layout_height="wrap_content" android:text="@string/guide_info_3" />
+	<TextView android:layout_width="wrap_content" style="@style/guide_main"
+		android:paddingLeft="5dp" android:paddingTop="25dp"
+		android:background="@drawable/guide_back_selector" android:id="@+id/btn_back"
+		android:layout_height="wrap_content" android:text="@string/guide_info_4" />
+</LinearLayout>

@@ -1,0 +1,68 @@
+package com.xikang.cpsclient;
+
+import org.jivesoftware.smack.PacketListener;
+import org.jivesoftware.smack.packet.Packet;
+
+import com.xikang.family.common.Constants;
+import com.xikang.family.common.Util;
+
+import android.content.Intent;
+import android.util.Log;
+
+public class NotificationPacketListener implements PacketListener {
+
+	private static final String LOGTAG = Util
+			.makeLogTag(NotificationPacketListener.class);
+
+	private final XmppManager xmppManager;
+
+	public NotificationPacketListener(XmppManager xmppManager) {
+		this.xmppManager = xmppManager;
+	}
+
+	@Override
+	public void processPacket(Packet packet) {
+		Log.d(LOGTAG, "*******************NotificationPacketListener.processPacket()...");
+		Log.d(LOGTAG, packet.toXML());
+
+		// boolean isReg = false;
+		//
+		if (packet instanceof NotificationIQ) {
+			NotificationIQ notification = (NotificationIQ) packet;
+
+			if (notification.getChildElementXML().contains(
+					"xkcpns:iq:notification")) {
+				String notificationId = notification.getId();
+				String notificationNo = notification.getNo();
+				String notificationPhrCode = notification.getPhrCode();
+				String notificationAppId = notification.getAppId();
+				String notificationSummary = notification.getSummary();
+				String notificationBody = notification.getBody();
+				String notificationTimestamp = notification.getTimestamp();
+				// SharedPreferences pref = xmppManager.getContext()
+				// .getSharedPreferences(Constants.SHARED_PREFERENCE_NAME,
+				// Context.MODE_PRIVATE);
+				// isReg = pref.getBoolean(notificationAppId, false);
+
+				// if (isReg) {
+				Intent intent = new Intent(
+						Constants.ACTION_APP_NOTIFICATION
+								.concat(Constants.APPID));
+				intent.putExtra(Constants.NOTIFICATION_ID, notificationId);
+				intent.putExtra(Constants.NOTIFICATION_NO, notificationNo);
+				intent.putExtra(Constants.NOTIFICATION_PHRCODE,
+						notificationPhrCode);
+				intent.putExtra(Constants.NOTIFICATION_SUMMARY,
+						notificationSummary);
+				intent.putExtra(Constants.NOTIFICATION_APPID, notificationAppId);
+				intent.putExtra(Constants.NOTIFICATION_BODY, notificationBody);
+				intent.putExtra(Constants.NOTIFICATION_TIMESTAMP,
+						notificationTimestamp);
+				xmppManager.getContext().sendBroadcast(intent);
+				// }
+			}
+		}
+
+	}
+
+}
